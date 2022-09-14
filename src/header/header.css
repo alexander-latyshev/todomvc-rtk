@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  width: 100%;
+  height: 65px;
+  margin: 0;
+  padding: 0;
+}
+.header__toggle-btn {
+  width: 45px;
+  height: 65px;
+  position: absolute;
+  margin: 0px;
+  padding: 0;
+}
+.header__add-input {
+  font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  padding-left: 60px;
+  border: none;
+}
