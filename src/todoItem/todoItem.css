@@ -1,0 +1,43 @@
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  font: 24px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4em;
+  color: black;
+  border-bottom: 1px solid #ededed;
+}
+.todo-item_check-btn {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  padding: 0;
+}
+.todo-item_content {
+  width: 100%;
+}
+.todo-item_remove-btn {
+  background-color: #fff;
+  color: #cc9a9a;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  padding: 0;
+  outline: none;
+  border: none;
+}
+.todo-item_remove-btn::after {
+  content: "×";
+  color: #cc9a9a;
+  visibility: hidden;
+  transform: rotate(45deg);
+  transition: color 0.2s ease-out;
+}
+.todo-item:hover .todo-item_remove-btn::after {
+  visibility: visible;
+}
+.todo-item_remove-btn:hover::after {
+  color: #a83333;
+}

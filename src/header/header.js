@@ -1,16 +1,15 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addNewTodo, removeTodo } from "../redux/todosReducer";
+import { addNewTodo } from "../redux/todosReducer";
 import "./header.css";
 
 const Header = () => {
-  const todoList = useSelector((state) => state.todos.todoList);
   const dispatch = useDispatch();
 
   function addNewTodoHandler(event) {
     const todoProps = {
       title: event.target.value,
-      id: performance.now(),
+      id: performance.now() * 1000,
       isCompleted: false,
     };
 
@@ -24,10 +23,7 @@ const Header = () => {
   return (
     <header className="header">
       <label />
-      <button
-        className="header__toggle-btn"
-        onClick={() => dispatch(removeTodo())}
-      />
+      <button className="header__toggle-btn" />
       <input
         onKeyDown={(event) => addNewTodoHandler(event)}
         type="text"
