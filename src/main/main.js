@@ -5,7 +5,6 @@ import "./main.css";
 
 const Main = () => {
   const todoList = useSelector((state) => state.todos.todoList);
-  
   return todoList.length > 0 ? (
     <main className="main">
       {todoList.map((todo) => {
