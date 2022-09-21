@@ -8,14 +8,23 @@
   color: black;
   border-bottom: 1px solid #ededed;
 }
-.todo-item_check-btn {
-  width: 40px;
-  height: 40px;
+.todo-item__checkbox {
+  position: absolute;
+  width: 35px;
+  height: 35px;
   margin: 0 10px;
   padding: 0;
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: none;
 }
-.todo-item_content {
+.todo-item__content {
   width: 100%;
+  text-decoration: none;
+  transition: color 0.4s;
+  padding-left: 60px;
 }
 .todo-item_remove-btn {
   background-color: #fff;
@@ -27,6 +36,10 @@
   padding: 0;
   outline: none;
   border: none;
+}
+.todo-item__content_checked {
+  text-decoration: line-through;
+  color: #d9d9d9;
 }
 .todo-item_remove-btn::after {
   content: "×";
@@ -40,4 +53,23 @@
 }
 .todo-item_remove-btn:hover::after {
   color: #a83333;
+}
+.todo-item__checkbox-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
+  position: absolute;
+}
+.todo-item__checkbox:checked {
+  content: "";
+  background: url("/src/assets/images/todoItem/check-mark.svg") no-repeat;
+  background-size: 36px;
+  background-position: -7px 0px;
+  border-radius: 50%;
+  display: block;
 }

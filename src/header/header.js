@@ -22,7 +22,6 @@ const Header = () => {
 
   return (
     <header className="header">
-      <label />
       <button className="header__toggle-btn" />
       <input
         onKeyDown={(event) => addNewTodoHandler(event)}
