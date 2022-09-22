@@ -4,13 +4,7 @@
   height: 65px;
   margin: 0;
   padding: 0;
-}
-.header__toggle-btn {
-  width: 45px;
-  height: 65px;
-  position: absolute;
-  margin: 0px;
-  padding: 0;
+  background-color: #ffffff;
 }
 .header__add-input {
   font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -21,4 +15,32 @@
   padding-left: 60px;
   border: none;
   outline: none;
+  background: none;
+}
+.header__toggle-btn,
+.header__toggle-btn_active {
+  position: absolute;
+  width: 45px;
+  height: 65px;
+  margin: 0px;
+  padding: 0;
+  display: flex;
+  border: none;
+  background: none;
+}
+
+.header__toggle-btn::after,
+.header__toggle-btn_active::after {
+  width: 15px;
+  height: 30px;
+  content: "❯";
+  display: block;
+  align-self: center;
+  font-size: 22px;
+  color: #e6e6e6;
+  transform: rotate(90deg);
+  margin-left: 15px;
+}
+.header__toggle-btn_active::after {
+  color: #737373;
 }

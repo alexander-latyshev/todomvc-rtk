@@ -7,7 +7,6 @@ import "./todoItem.css";
 const TodoItem = (props) => {
   const todoList = useSelector((state) => state.todos.todoList);
   const dispatch = useDispatch();
-  console.log(props);
   return (
     <div className="todo-item">
       <label htmlFor="check" className="todo-item__checkbox-label" />
@@ -26,7 +25,7 @@ const TodoItem = (props) => {
         {props.title}
       </div>
       <button
-        className="todo-item_remove-btn"
+        className="todo-item__remove-btn"
         onClick={() => dispatch(removeTodo(props.id))}
       ></button>
     </div>
