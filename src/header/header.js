@@ -17,6 +17,7 @@ const Header = () => {
       title: event.target.value,
       id: performance.now() * 1000,
       isCompleted: false,
+      isEditing: false,
     };
 
     if (event.code !== "Enter" || event.target.value === "") {

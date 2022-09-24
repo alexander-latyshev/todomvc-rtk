@@ -8,6 +8,7 @@
   margin: 0;
   padding: 10px 15px;
   color: #777;
+  user-select: none;
 }
 .footer:before {
   content: "";
@@ -22,7 +23,7 @@
     0 17px 2px -6px rgb(0 0 0 / 20%);
 }
 .footer__pagination-links {
-  width: 160px;
+  width: 180px;
   display: flex;
   justify-content: space-between;
   list-style-type: none;

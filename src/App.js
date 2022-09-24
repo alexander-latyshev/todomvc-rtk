@@ -9,6 +9,7 @@ const App = () => {
 
   return (
     <div className="todos">
+      <h1>todos</h1>
       <Header />
       <Main router={{ location }} />
       <Footer router={{ location }} />

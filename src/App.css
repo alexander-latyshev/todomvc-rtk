@@ -4,5 +4,14 @@
   width: 550px;
   position: relative;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 50px;
+}
+.todos h1 {
+  color: white;
+  font: 100px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 100px;
+  font-weight: 100;
+  text-align: center;
+  margin: 0;
+  user-select: none;
 }

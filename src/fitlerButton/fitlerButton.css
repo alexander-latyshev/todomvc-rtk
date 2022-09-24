@@ -3,12 +3,12 @@
   text-decoration: none;
   color: #777;
 }
-.filter-btn:hover {
-  color: red;
+.filter-btn_active {
+  border: 1px solid rgba(175, 47, 47, 0.3);
+  border-radius: 3px;
+  text-decoration: none;
 }
-.filter-btn:active {
-    color: blue;
-}
-li {
-text-decoration: none;
+.footer__pagination-links li a {
+  padding: 3px 7px;
+  text-decoration: none;
 }

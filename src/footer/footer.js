@@ -10,19 +10,18 @@ function Footer(props) {
   const uncompletedTodos = todoList.filter((todo) => {
     return todo.isCompleted === false;
   });
-  console.log(props.router.location.pathname);
   if (todoList.length > 0) {
     return (
       <footer className="footer">
         <article>
           {`${uncompletedTodos.length} item`}
-          {todoList.length > 0 ? "s left" : "left"}
+          {uncompletedTodos.length === 1 ? " left" : "s left"}
         </article>
 
         <ul className="footer__pagination-links">
-          <FilterButton name="All" to="/" />
-          <FilterButton name="Active" to="/active" />
-          <FilterButton name="Completed" to="/completed" />
+          <FilterButton name="All" path="/" router={props.router}/>
+          <FilterButton name="Active" path="/active" router={props.router}/>
+          <FilterButton name="Completed" path="/completed" router={props.router}/>
         </ul>
         <button
           className="footer__clear-button"
