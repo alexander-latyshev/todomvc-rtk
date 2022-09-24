@@ -1,7 +1,7 @@
 .filter-btn {
   position: relative;
   text-decoration: none;
-  color: black;
+  color: #777;
 }
 .filter-btn:hover {
   color: red;

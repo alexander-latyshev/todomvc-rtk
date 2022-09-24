@@ -7,6 +7,7 @@ import "./todoItem.css";
 const TodoItem = (props) => {
   const todoList = useSelector((state) => state.todos.todoList);
   const dispatch = useDispatch();
+
   return (
     <div className="todo-item">
       <input

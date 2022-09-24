@@ -53,9 +53,20 @@ export const todosSlice = createSlice({
         todoList: changedTodoList,
       };
     },
+    clearCompletedTodos: (state) => {
+      const clearedTodos = state.todoList.filter((todo) => {
+        return todo.isCompleted === false;
+      });
+      return {
+        ...state,
+        todoList: clearedTodos,
+      };
+    },
   },
 });
 
 export const { addNewTodo, toggleAllTodo } = todosSlice.actions;
 export const { removeTodo, toggleTodo } = todosSlice.actions;
+export const { clearCompletedTodos } = todosSlice.actions;
+
 export default todosSlice.reducer;
