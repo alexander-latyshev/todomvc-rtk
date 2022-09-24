@@ -9,7 +9,6 @@ const TodoItem = (props) => {
   const dispatch = useDispatch();
   return (
     <div className="todo-item">
-      <label htmlFor="check" className="todo-item__checkbox-label" />
       <input
         type="checkbox"
         className="todo-item__checkbox"

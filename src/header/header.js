@@ -5,10 +5,10 @@ import { addNewTodo, toggleAllTodo } from "../redux/todosReducer";
 import "./header.css";
 
 const Header = () => {
+  const todoList = useSelector((state) => state.todos.todoList);
   const dispatch = useDispatch();
-  const state = useSelector((state) => state);
 
-  const todoListCheck = state.todos.todoList.every((todo) => {
+  const todoListCheck = todoList.every((todo) => {
     return todo.isCompleted;
   });
 
@@ -27,16 +27,18 @@ const Header = () => {
   }
   return (
     <header className="header">
-      <button
-        className={`header__toggle-btn${
-          todoListCheck === true ? "_active" : ""
-        }`}
-        onClick={() => dispatch(toggleAllTodo())}
-      />
+      {todoList.length > 0 ? (
+        <button
+          className={`header__toggle-btn${
+            todoListCheck === true ? "_active" : ""
+          }`}
+          onClick={() => dispatch(toggleAllTodo())}
+        />
+      ) : null}
       <input
         onKeyDown={(event) => addNewTodoHandler(event)}
         type="text"
-        className="header__add-input"
+        className="header__add-todo-input"
         placeholder="What needs to be done?"
       />
     </header>

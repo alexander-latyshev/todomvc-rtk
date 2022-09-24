@@ -4,10 +4,13 @@
   height: 65px;
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+  background: #ffff;
+  color: black;
+  box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%);
 }
-.header__add-input {
-  font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+.header__add-todo-input {
+  font: 24px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: black;
   width: 100%;
   height: 100%;
   padding: 0;
@@ -16,6 +19,11 @@
   border: none;
   outline: none;
   background: none;
+}
+.header__add-todo-input::placeholder {
+  font-size: 24px;
+  font-style: italic;
+  color: #d9d9d9;
 }
 .header__toggle-btn,
 .header__toggle-btn_active {
@@ -28,9 +36,8 @@
   border: none;
   background: none;
 }
-
-.header__toggle-btn::after,
-.header__toggle-btn_active::after {
+.header__toggle-btn::before,
+.header__toggle-btn_active::before {
   width: 15px;
   height: 30px;
   content: "❯";
@@ -41,6 +48,6 @@
   transform: rotate(90deg);
   margin-left: 15px;
 }
-.header__toggle-btn_active::after {
+.header__toggle-btn_active::before {
   color: #737373;
 }
