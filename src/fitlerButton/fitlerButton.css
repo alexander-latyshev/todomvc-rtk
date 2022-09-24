@@ -1,0 +1,14 @@
+.filter-btn {
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+.filter-btn:hover {
+  color: red;
+}
+.filter-btn:active {
+    color: blue;
+}
+li {
+text-decoration: none;
+}

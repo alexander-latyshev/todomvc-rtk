@@ -2,13 +2,16 @@ import "./App.css";
 import Footer from "./footer/footer";
 import Header from "./header/header";
 import Main from "./main/main";
+import { useLocation } from "react-router-dom";
 
 const App = () => {
+  const location = useLocation();
+
   return (
     <div className="todos">
       <Header />
-      <Main />
-      <Footer />
+      <Main router={{ location }} />
+      <Footer router={{ location }} />
     </div>
   );
 };

@@ -3,11 +3,22 @@ import { useDispatch, useSelector } from "react-redux";
 import TodoItem from "../todoItem/todoItem";
 import "./main.css";
 
-const Main = () => {
+const Main = (props) => {
+  const pathLocation = props.router.location.pathname;
   const todoList = useSelector((state) => state.todos.todoList);
+
+  // ROUTING
+  const filteredTodos = todoList.filter((todo) => {
+    if (pathLocation === "/active") {
+      return todo.isCompleted === false;
+    } else if (pathLocation === "/completed") {
+      return todo.isCompleted === true;
+    } else return todoList;
+  });
+
   return todoList.length > 0 ? (
     <main className="main">
-      {todoList.map((todo) => {
+      {filteredTodos.map((todo) => {
         return (
           <TodoItem
             key={todo.id}

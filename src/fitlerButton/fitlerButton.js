@@ -1,10 +1,15 @@
-import React from 'react';
-import './fitlerButton.css';
+import React from "react";
+import "./fitlerButton.css";
+import { Link } from "react-router-dom";
 
-function FilterButton() {
+function FilterButton(props) {
   return (
-    <div>FilterButton</div>
-  )
+    <li>
+      <Link className="filter-btn" to={props.to}>
+        {props.name}
+      </Link>
+    </li>
+  );
 }
 
 export default FilterButton;

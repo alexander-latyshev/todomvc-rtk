@@ -8,10 +8,13 @@ function Footer() {
 
   if (todoList.length > 0) {
     return (
-      <div className="footer">
-        <FilterButton />
-        <FilterButton />
-      </div>
+      <footer className="footer">
+        <ul className="footer__pagination-links">
+          <FilterButton name="All" to="/" />
+          <FilterButton name="Active" to="/active" />
+          <FilterButton name="Completed" to="/completed" />
+        </ul>
+      </footer>
     );
   }
 }
