@@ -62,11 +62,50 @@ export const todosSlice = createSlice({
         todoList: clearedTodos,
       };
     },
+    startEditingTodo: (state, action) => {
+      const editedTodo = state.todoList.map((todo) => {
+        if (todo.id !== action.payload) {
+          return todo;
+        } else
+          return {
+            ...todo,
+            isEditing: !todo.isEditing,
+          };
+      });
+      return {
+        ...state,
+        todoList: editedTodo,
+      };
+    },
+    endEditingTodo: (state, action) => {
+      const submitTodo = state.todoList.map((todo) => {
+        if (todo.id !== action.payload.id) return todo;
+        else
+          return {
+            ...todo,
+            isEditing: false,
+            title: action.payload.title,
+          };
+      });
+      return {
+        ...state,
+        todoList: submitTodo,
+      };
+    },
   },
 });
 
-export const { addNewTodo, toggleAllTodo } = todosSlice.actions;
-export const { removeTodo, toggleTodo } = todosSlice.actions;
-export const { clearCompletedTodos } = todosSlice.actions;
+export const {
+  // HEADER
+  addNewTodo,
+  toggleAllTodo,
+  // MAIN
+  removeTodo,
+  toggleTodo,
+  startEditingTodo,
+  endEditingTodo,
+  // FOOTER
+  clearCompletedTodos,
+} = todosSlice.actions;
 
 export default todosSlice.reducer;

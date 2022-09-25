@@ -12,9 +12,9 @@ root.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <StrictMode>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </StrictMode>
     </PersistGate>
   </Provider>
