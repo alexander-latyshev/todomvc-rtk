@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import classNames from "classnames";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   endEditingTodo,
   removeTodo,
@@ -18,7 +18,7 @@ const TodoItem = (props) => {
 
   function editTodoHandler(event) {
     if (event.code === "Enter" && event.target.value) {
-      return dispatch(
+      dispatch(
         endEditingTodo({
           title: event.target.value,
           id: props.id,
@@ -26,12 +26,12 @@ const TodoItem = (props) => {
         })
       );
     }
-    if (event.code == "Enter" && !event.target.value) {
-      return dispatch(removeTodo(props.id));
+    if (event.code === "Enter" && !event.target.value) {
+      dispatch(removeTodo(props.id));
     }
     if (event.code === "Escape") {
       event.target.value = props.title;
-      return dispatch(
+      dispatch(
         endEditingTodo({
           title: props.title,
           id: props.id,
@@ -40,7 +40,7 @@ const TodoItem = (props) => {
       );
     }
     if (!event.code && event.target.value) {
-      return dispatch(
+      dispatch(
         endEditingTodo({
           title: event.target.value,
           id: props.id,
@@ -49,7 +49,7 @@ const TodoItem = (props) => {
       );
     }
     if (!event.code && !event.target.value) {
-      return dispatch(removeTodo(props.id));
+      dispatch(removeTodo(props.id));
     }
   }
   return (

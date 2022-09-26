@@ -96,15 +96,12 @@ export const todosSlice = createSlice({
 });
 
 export const {
-  // HEADER
   addNewTodo,
   toggleAllTodo,
-  // MAIN
   removeTodo,
   toggleTodo,
   startEditingTodo,
   endEditingTodo,
-  // FOOTER
   clearCompletedTodos,
 } = todosSlice.actions;
 
